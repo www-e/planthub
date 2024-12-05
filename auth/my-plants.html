@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlantHub - My Plants</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="themes.css">
+    <link rel="stylesheet" href="app-bar.css">
+    <link rel="stylesheet" href="my-plants.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- App Bar -->
+    <div class="app-bar">
+        <div class="app-bar-left">
+            <button class="menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="app-bar-brand">
+                <i class="fas fa-seedling"></i>
+                <span>PlantHub</span>
+            </div>
+            <nav class="app-bar-nav">
+                <a href="home.html" class="nav-item">Dashboard</a>
+                <a href="my-plants.html" class="nav-item active">My Plants</a>
+                <a href="#" class="nav-item">Schedule</a>
+                <a href="#" class="nav-item">Community</a>
+            </nav>
+        </div>
+        <div class="app-bar-right">
+            <button class="theme-switch">
+                <div class="switch-handle">
+                    <i class="fas fa-sun sun-icon"></i>
+                    <i class="fas fa-moon moon-icon"></i>
+                </div>
+            </button>
+            <div class="user-profile">
+                <div class="user-avatar">O</div>
+                <span class="user-name">Omar</span>
+                <div class="user-dropdown">
+                    <a href="#" class="dropdown-item">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="signin.html" class="dropdown-item">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Sign Out</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Fixed Header -->
+        <div class="page-header">
+            <h1 class="page-title">
+                <i class="fas fa-leaf"></i>
+                My Plants
+            </h1>
+            <button class="collapse-button">
+                <span>Filters</span>
+                <i class="fas fa-chevron-up"></i>
+            </button>
+        </div>
+
+        <div class="card my-plants-card">
+            <div class="main-container">
+                <!-- Advanced Futuristic Filter Section -->
+                <div class="filter-section">
+                    <div class="filter-content">
+                        <!-- Quick Filters -->
+                        <div class="quick-actions">
+                            <button class="quick-filter active">
+                                <i class="fas fa-globe"></i>
+                                All Plants
+                            </button>
+                            <button class="quick-filter">
+                                <i class="fas fa-heart"></i>
+                                Favorites
+                            </button>
+                            <button class="quick-filter">
+                                <i class="fas fa-exclamation-circle"></i>
+                                Needs Attention
+                            </button>
+                            <button class="quick-filter">
+                                <i class="fas fa-tint"></i>
+                                Needs Water
+                            </button>
+                            <button class="quick-filter">
+                                <i class="fas fa-sun"></i>
+                                Needs Light
+                            </button>
+                            <button class="quick-filter">
+                                <i class="fas fa-seedling"></i>
+                                Growing
+                            </button>
+                        </div>
+
+                        <!-- Advanced Filters -->
+                        <div class="filter-bar">
+                            <div class="filter-container">
+                                <div class="filter-group">
+                                    <span class="filter-label">
+                                        <i class="fas fa-search"></i>
+                                        Search
+                                    </span>
+                                    <input type="text" class="filter-input" placeholder="Search by name or species...">
+                                </div>
+                                
+                                <div class="filter-group">
+                                    <span class="filter-label">
+                                        <i class="fas fa-tags"></i>
+                                        Category
+                                    </span>
+                                    <select class="filter-input filter-select">
+                                        <option value="">All Categories</option>
+                                        <option value="indoor">Indoor Plants</option>
+                                        <option value="outdoor">Outdoor Plants</option>
+                                        <option value="succulents">Succulents</option>
+                                        <option value="herbs">Herbs</option>
+                                        <option value="flowers">Flowers</option>
+                                        <option value="vegetables">Vegetables</option>
+                                        <option value="fruits">Fruits</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="filter-group">
+                                    <span class="filter-label">
+                                        <i class="fas fa-thermometer-half"></i>
+                                        Growth Stage
+                                    </span>
+                                    <select class="filter-input filter-select">
+                                        <option value="">All Stages</option>
+                                        <option value="seed">Seed</option>
+                                        <option value="seedling">Seedling</option>
+                                        <option value="young">Young Plant</option>
+                                        <option value="mature">Mature</option>
+                                        <option value="flowering">Flowering</option>
+                                        <option value="fruiting">Fruiting</option>
+                                    </select>
+                                </div>
+
+                                <div class="filter-group">
+                                    <span class="filter-label">
+                                        <i class="fas fa-heart-pulse"></i>
+                                        Health Status
+                                    </span>
+                                    <select class="filter-input filter-select">
+                                        <option value="">All Status</option>
+                                        <option value="excellent">Excellent</option>
+                                        <option value="good">Good</option>
+                                        <option value="fair">Fair</option>
+                                        <option value="needsCare">Needs Care</option>
+                                        <option value="critical">Critical</option>
+                                    </select>
+                                </div>
+
+                                <div class="filter-group">
+                                    <span class="filter-label">
+                                        <i class="fas fa-ruler-vertical"></i>
+                                        Height Range (cm)
+                                    </span>
+                                    <div class="range-group">
+                                        <input type="number" class="filter-input" placeholder="Min">
+                                        <input type="number" class="filter-input" placeholder="Max">
+                                    </div>
+                                </div>
+
+                                <div class="filter-group">
+                                    <span class="filter-label">
+                                        <i class="fas fa-calendar"></i>
+                                        Age Range (months)
+                                    </span>
+                                    <div class="range-group">
+                                        <input type="number" class="filter-input" placeholder="Min">
+                                        <input type="number" class="filter-input" placeholder="Max">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="filter-actions">
+                                <button class="filter-button secondary">
+                                    <i class="fas fa-rotate-left"></i>
+                                    Reset Filters
+                                </button>
+                                <button class="filter-button primary">
+                                    <i class="fas fa-filter"></i>
+                                    Apply Filters
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Main Content Area -->
+                <div class="main-content">
+                    <div class="plants-grid">
+                        <!-- Plant Card 1 -->
+                        <div class="plant-card">
+                            <div class="plant-image-container">
+                                <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8" alt="Monstera Deliciosa" class="plant-image">
+                                <div class="quick-actions-overlay">
+                                    <div class="quick-actions-top">
+                                        <button class="quick-action-btn favorite" data-tooltip="Add to Favorites">
+                                            <i class="fas fa-heart"></i>
+                                        </button>
+                                        <button class="quick-action-btn" data-tooltip="Share Plant">
+                                            <i class="fas fa-share-alt"></i>
+                                        </button>
+                                    </div>
+                                    <div class="quick-actions-bottom">
+                                        <button class="quick-action-btn" data-tooltip="View Timeline">
+                                            <i class="fas fa-clock-rotate-left"></i>
+                                        </button>
+                                        <button class="quick-action-btn" data-tooltip="Quick Water">
+                                            <i class="fas fa-droplet"></i>
+                                        </button>
+                                        <button class="quick-action-btn" data-tooltip="More Options">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="plant-info">
+                                <div class="plant-name">
+                                    Monstera Deliciosa
+                                </div>
+                                <div class="plant-badges">
+                                    <span class="plant-badge">
+                                        <i class="fas fa-leaf"></i>
+                                        Indoor
+                                    </span>
+                                    <span class="plant-badge">
+                                        <i class="fas fa-sun"></i>
+                                        Medium Light
+                                    </span>
+                                    <span class="plant-badge">
+                                        <i class="fas fa-temperature-half"></i>
+                                        20-25°C
+                                    </span>
+                                </div>
+                                <div class="progress-section">
+                                    <div class="progress-item">
+                                        <div class="progress-header">
+                                            <span class="progress-label">Water Level</span>
+                                            <span class="progress-value">65%</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-item">
+                                        <div class="progress-header">
+                                            <span class="progress-label">Sunlight</span>
+                                            <span class="progress-value">20%</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 60%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-item">
+                                        <div class="progress-header">
+                                            <span class="progress-label">Health</span>
+                                            <span class="progress-value">10%</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="plant-actions">
+                                    <button class="plant-action" data-tooltip="Log Care Activity">
+                                        <i class="fas fa-plus"></i>
+                                        Add Care Log
+                                    </button>
+                                    <button class="plant-action" data-tooltip="View Details">
+                                        <i class="fas fa-chart-line"></i>
+                                        Analytics
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Plant Card 2 -->
+                        <div class="plant-card">
+                            <div class="plant-image-container">
+                                <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8" alt="Monstera Deliciosa" class="plant-image">
+                                <div class="quick-actions-overlay">
+                                    <div class="quick-actions-top">
+                                        <button class="quick-action-btn favorite" data-tooltip="Add to Favorites">
+                                            <i class="fas fa-heart"></i>
+                                        </button>
+                                        <button class="quick-action-btn" data-tooltip="Share Plant">
+                                            <i class="fas fa-share-alt"></i>
+                                        </button>
+                                    </div>
+                                    <div class="quick-actions-bottom">
+                                        <button class="quick-action-btn" data-tooltip="View Timeline">
+                                            <i class="fas fa-clock-rotate-left"></i>
+                                        </button>
+                                        <button class="quick-action-btn" data-tooltip="Quick Water">
+                                            <i class="fas fa-droplet"></i>
+                                        </button>
+                                        <button class="quick-action-btn" data-tooltip="More Options">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="plant-info">
+                                <div class="plant-name">
+                                    Monstera Deliciosa
+                                </div>
+                                <div class="plant-badges">
+                                    <span class="plant-badge">
+                                        <i class="fas fa-leaf"></i>
+                                        Indoor
+                                    </span>
+                                    <span class="plant-badge">
+                                        <i class="fas fa-sun"></i>
+                                        Medium Light
+                                    </span>
+                                    <span class="plant-badge">
+                                        <i class="fas fa-temperature-half"></i>
+                                        20-25°C
+                                    </span>
+                                </div>
+                                <div class="progress-section">
+                                    <div class="progress-item">
+                                        <div class="progress-header">
+                                            <span class="progress-label">Water Level</span>
+                                            <span class="progress-value">75%</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-item">
+                                        <div class="progress-header">
+                                            <span class="progress-label">Sunlight</span>
+                                            <span class="progress-value">60%</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 60%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-item">
+                                        <div class="progress-header">
+                                            <span class="progress-label">Health</span>
+                                            <span class="progress-value">90%</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="plant-actions">
+                                    <button class="plant-action" data-tooltip="Log Care Activity">
+                                        <i class="fas fa-plus"></i>
+                                        Add Care Log
+                                    </button>
+                                    <button class="plant-action" data-tooltip="View Details">
+                                        <i class="fas fa-chart-line"></i>
+                                        Analytics
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Plant Card 3 -->
+                        <div class="plant-card">
+                            <div class="plant-image-container">
+                                <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8" alt="Monstera Deliciosa" class="plant-image">
+                                <div class="quick-actions-overlay">
+                                    <div class="quick-actions-top">
+                                        <button class="quick-action-btn favorite" data-tooltip="Add to Favorites">
+                                            <i class="fas fa-heart"></i>
+                                        </button>
+                                        <button class="quick-action-btn" data-tooltip="Share Plant">
+                                            <i class="fas fa-share-alt"></i>
+                                        </button>
+                                    </div>
+                                    <div class="quick-actions-bottom">
+                                        <button class="quick-action-btn" data-tooltip="View Timeline">
+                                            <i class="fas fa-clock-rotate-left"></i>
+                                        </button>
+                                        <button class="quick-action-btn" data-tooltip="Quick Water">
+                                            <i class="fas fa-droplet"></i>
+                                        </button>
+                                        <button class="quick-action-btn" data-tooltip="More Options">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="plant-info">
+                                <div class="plant-name">
+                                    Monstera Deliciosa
+                                </div>
+                                <div class="plant-badges">
+                                    <span class="plant-badge">
+                                        <i class="fas fa-leaf"></i>
+                                        Indoor
+                                    </span>
+                                    <span class="plant-badge">
+                                        <i class="fas fa-sun"></i>
+                                        Medium Light
+                                    </span>
+                                    <span class="plant-badge">
+                                        <i class="fas fa-temperature-half"></i>
+                                        20-25°C
+                                    </span>
+                                </div>
+                                <div class="progress-section">
+                                    <div class="progress-item">
+                                        <div class="progress-header">
+                                            <span class="progress-label">Water Level</span>
+                                            <span class="progress-value">75%</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-item">
+                                        <div class="progress-header">
+                                            <span class="progress-label">Sunlight</span>
+                                            <span class="progress-value">60%</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 60%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-item">
+                                        <div class="progress-header">
+                                            <span class="progress-label">Health</span>
+                                            <span class="progress-value">90%</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="plant-actions">
+                                    <button class="plant-action" data-tooltip="Log Care Activity">
+                                        <i class="fas fa-plus"></i>
+                                        Add Care Log
+                                    </button>
+                                    <button class="plant-action" data-tooltip="View Details">
+                                        <i class="fas fa-chart-line"></i>
+                                        Analytics
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Plant Card 4 -->
+                        <div class="plant-card">
+                            <div class="plant-image-container">
+                                <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8" alt="Monstera Deliciosa" class="plant-image">
+                                <div class="quick-actions-overlay">
+                                    <div class="quick-actions-top">
+                                        <button class="quick-action-btn favorite" data-tooltip="Add to Favorites">
+                                            <i class="fas fa-heart"></i>
+                                        </button>
+                                        <button class="quick-action-btn" data-tooltip="Share Plant">
+                                            <i class="fas fa-share-alt"></i>
+                                        </button>
+                                    </div>
+                                    <div class="quick-actions-bottom">
+                                        <button class="quick-action-btn" data-tooltip="View Timeline">
+                                            <i class="fas fa-clock-rotate-left"></i>
+                                        </button>
+                                        <button class="quick-action-btn" data-tooltip="Quick Water">
+                                            <i class="fas fa-droplet"></i>
+                                        </button>
+                                        <button class="quick-action-btn" data-tooltip="More Options">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="plant-info">
+                                <div class="plant-name">
+                                    Monstera Deliciosa
+                                </div>
+                                <div class="plant-badges">
+                                    <span class="plant-badge">
+                                        <i class="fas fa-leaf"></i>
+                                        Indoor
+                                    </span>
+                                    <span class="plant-badge">
+                                        <i class="fas fa-sun"></i>
+                                        Medium Light
+                                    </span>
+                                    <span class="plant-badge">
+                                        <i class="fas fa-temperature-half"></i>
+                                        20-25°C
+                                    </span>
+                                </div>
+                                <div class="progress-section">
+                                    <div class="progress-item">
+                                        <div class="progress-header">
+                                            <span class="progress-label">Water Level</span>
+                                            <span class="progress-value">75%</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-item">
+                                        <div class="progress-header">
+                                            <span class="progress-label">Sunlight</span>
+                                            <span class="progress-value">60%</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 60%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-item">
+                                        <div class="progress-header">
+                                            <span class="progress-label">Health</span>
+                                            <span class="progress-value">90%</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="plant-actions">
+                                    <button class="plant-action" data-tooltip="Log Care Activity">
+                                        <i class="fas fa-plus"></i>
+                                        Add Care Log
+                                    </button>
+                                    <button class="plant-action" data-tooltip="View Details">
+                                        <i class="fas fa-chart-line"></i>
+                                        Analytics
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="theme.js"></script>
+    <script src="drawer.js"></script>
+    <script src="my-plants.js"></script>
+</body>
+</html>
