@@ -1,4 +1,6 @@
 /* Theme Variables */
+
+/*this file contains app colors and clouds and theme swithcer and some features styles*/
 [data-theme="light"] {
     --primary-color: #2ecc71;
     --primary-dark: #27ae60;
@@ -168,6 +170,7 @@
     box-shadow: 0 0 3px var(--star-color);
 }
 
+
 [data-theme="light"] .star {
     box-shadow: 0 0 4px var(--star-color),
                 0 0 8px var(--star-color);
@@ -184,6 +187,17 @@
     }
 }
 
+
+/*the feature icons*/
+.fa-user-shield::before {
+    color: var(--primary-bg);
+  }
+.fa-shield-alt::before {
+    color: var(--primary-bg);
+  }
+.fa-sync::before {
+    color: var(--primary-bg);
+  }
 /* Enhanced Clouds */
 .clouds {
     position: absolute;

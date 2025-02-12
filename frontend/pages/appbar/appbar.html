@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Bar Component</title>
+</head>
+<body>
+    
+    <!-- App Bar -->
+<template id="app-bar-template">
+<div class="app-bar">
+    <div class="app-bar-left">
+        <button class="menu-button">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="app-bar-brand">
+            <i class="fas fa-seedling"></i>
+            <span>PlantHub</span>
+        </div>
+        <nav class="app-bar-nav">
+            <a href="#" class="nav-item active">Dashboard</a>
+            <a href="my-plants.html" class="nav-item">My Plants</a>
+            <a href="#" class="nav-item">Schedule</a>
+            <a href="#" class="nav-item">Community</a>
+        </nav>
+    </div>
+    <div class="app-bar-right">
+        <button class="theme-switch">
+            <div class="switch-handle">
+                <i class="fas fa-sun sun-icon"></i>
+                <i class="fas fa-moon moon-icon"></i>
+            </div>
+        </button>
+        <div class="user-profile">
+            <div class="user-avatar">O</div>
+            <span class="user-name">Omar</span>
+            <div class="user-dropdown">
+                <a href="#" class="dropdown-item">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="signin.html" class="dropdown-item">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sign Out</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</template>
+</body>
+</html>

@@ -1,0 +1,83 @@
+/* Form Component Styles */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    position: relative;
+    animation: slide-up 0.5s ease-out 0.2s backwards;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 45px;
+    border: 2px solid var(--background-light);
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.input-group input:focus + i {
+    color: var(--primary-color);
+}
+
+.toggle-password {
+    left: auto !important;
+    right: 15px;
+    cursor: pointer;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slide-up 0.5s ease-out 0.3s backwards;
+}
+
+.remember-me, .terms {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.forgot-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.forgot-link:hover {
+    color: var(--primary-dark);
+}
+
+h2 {
+    color: var(--text-color);
+    font-size: 2rem;
+    margin-bottom: 10px;
+    animation: slide-up 0.5s ease-out;
+}
+
+.subtitle {
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    animation: slide-up 0.5s ease-out 0.1s backwards;
+}

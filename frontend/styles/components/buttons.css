@@ -1,0 +1,19 @@
+/* Button Component Styles */
+.submit-btn {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: slide-up 0.5s ease-out 0.4s backwards;
+}
+
+.submit-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}

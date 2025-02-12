@@ -1,0 +1,70 @@
+/* Authentication Layout Styles */
+.page-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 600px;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 15px 30px var(--shadow-color);
+    display: flex;
+    overflow: hidden;
+    animation: container-appear 0.5s ease-out;
+}
+
+.left-panel {
+    flex: 1;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.right-panel {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+    margin-bottom: 40px;
+}
+
+.brand i {
+    font-size: 2.5rem;
+}
+
+.brand h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.plant-illustration {
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    opacity: 0.1;
+    animation: float 20s infinite linear;
+}

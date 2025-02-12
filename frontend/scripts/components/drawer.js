@@ -1,10 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
+// Function to initialize drawer functionality
+function initializeDrawer() {
     const menuButton = document.querySelector('.menu-button');
     const drawer = document.querySelector('.mobile-drawer');
     const drawerClose = document.querySelector('.drawer-close');
     const drawerOverlay = document.querySelector('.drawer-overlay');
     const drawerProfile = document.querySelector('.drawer-profile');
     const profileMenu = document.querySelector('.drawer-profile-menu');
+
+    if (!menuButton || !drawer || !drawerClose || !drawerOverlay || !drawerProfile || !profileMenu) {
+        // Wait for elements to be available
+        setTimeout(initializeDrawer, 100);
+        return;
+    }
 
     // Function to open drawer
     const openDrawer = () => {
@@ -75,4 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             closeDrawer();
         });
     });
-});
+}
+
+// Start initialization when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializeDrawer);

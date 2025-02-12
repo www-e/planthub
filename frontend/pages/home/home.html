@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlantHub - Home</title>
+    <link rel="stylesheet" href="../../styles/theme/themes.css">
+    <link rel="stylesheet" href="../../styles/base/reset.css">
+    <link rel="stylesheet" href="../../styles/base/transitions.css">
+    <link rel="stylesheet" href="../../styles/components/buttons.css">
+    <link rel="stylesheet" href="../../styles/animations/keyframes.css">
+    <link rel="stylesheet" href="../../styles/components/app-bar.css">
+    <link rel="stylesheet" href="../../styles/components/theme-switcher.css">
+    <link rel="stylesheet" href="../../styles/pages/home.css">
+    <link rel="stylesheet" href="../../styles/responsive/mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app-bar-placeholder"></div>
+    <div id="drawer-placeholder"></div>
+    <div class="drawer-overlay"></div>
+
+    <div class="animated-background">
+        <div class="stars"></div>
+        <div class="clouds">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+            <div class="cloud cloud-4"></div>
+            <div class="cloud cloud-5"></div>
+            <div class="cloud cloud-6"></div>
+            <div class="cloud cloud-7"></div>
+            <div class="cloud cloud-8"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card home-card">
+            <div class="brand-logo">
+                <i class="fas fa-seedling"></i>
+            </div>
+            <div class="welcome-header">
+                <h2>Welcome to plantHub</h2>
+                <p>Hello, <span class="username">Omar</span>!</p>
+            </div>
+
+            <div class="quick-actions">
+                <div class="action-item">
+                    <i class="fas fa-leaf"></i>
+                    <div class="action-text">
+                        <h4>My Plants</h4>
+                        <p>View and manage your plants</p>
+                    </div>
+                </div>
+                <div class="action-item">
+                    <i class="fas fa-tint"></i>
+                    <div class="action-text">
+                        <h4>Watering Schedule</h4>
+                        <p>Track watering times</p>
+                    </div>
+                </div>
+                <div class="action-item">
+                    <i class="fas fa-sun"></i>
+                    <div class="action-text">
+                        <h4>Light Monitor</h4>
+                        <p>Check light conditions</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="../../scripts/components/appbar-drawer-loader.js"></script>
+    <script src="../../scripts/components/drawer.js"></script>
+    <script src="../../scripts/theme/theme.js"></script>
+
+</body>
+</html>

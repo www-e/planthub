@@ -1,0 +1,237 @@
+/* Feature Section Component Styles */
+.features-section {
+    margin: 20px 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.features-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: var(--card-bg);
+    cursor: pointer;
+}
+
+.features-content {
+    background: var(--card-bg);
+    transition: all 0.3s ease;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feature-item:last-child {
+    border-bottom: none;
+}
+
+.feature-item i {
+    font-size: 1.2em;
+    color: var(--primary-color);
+}
+
+.features-toggle {
+    background: var(--feature-icon-bg);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+    color: var(--feature-icon-color);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.features-toggle:hover, .features-toggle:active {
+    background: var(--feature-icon-hover-bg);
+    color: var(--feature-icon-hover);
+    transform: scale(1.1);
+}
+
+.features-toggle i {
+    font-size: 1.2rem;
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.features-content {
+    display: grid;
+    gap: 1.2rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0); /* Force GPU acceleration */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.feature-item.active {
+    background: var(--feature-icon-hover-bg);
+    transform: scale(0.98);
+}
+
+.feature-item.clicked {
+    animation: clickPulse 0.3s ease-out;
+}
+
+.feature-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--primary-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover::before {
+    opacity: 1;
+}
+
+.feature-item i {
+    font-size: 1.5rem;
+    color: var(--feature-icon-color);
+    background: var(--feature-icon-bg);
+    padding: 1rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    min-width: 44px; /* Minimum touch target size */
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-item:hover i {
+    transform: scale(1.1) rotate(5deg);
+    color: var(--feature-icon-hover);
+    background: var(--feature-icon-hover-bg);
+}
+
+.feature-item span {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    flex: 1;
+}
+
+.feature-item {
+    min-height: 60px; /* Minimum touch target size */
+    padding: 12px 16px;
+}
+
+.feature-feedback {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 8px;
+    transform: translateY(100%);
+    animation: slideUp 0.3s forwards, slideDown 0.3s forwards 0.7s;
+}
+
+/* Prevent text selection during touch */
+.feature-item * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Ripple effect */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(var(--primary-color-rgb), 0.3);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+/* Enhanced feature item hover effect */
+.feature-item {
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-item:hover {
+    transform: translateY(-2px) translateX(5px);
+    box-shadow: 0 4px 15px rgba(var(--primary-color-rgb), 0.15);
+}
+
+.feature-item i {
+    position: relative;
+    z-index: 1;
+}
+
+.feature-item i::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(var(--primary-color-rgb), 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.feature-item:hover i::after {
+    width: 200%;
+    height: 200%;
+}
+
+/* Feature item glow effect */
+.feature-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(var(--primary-color-rgb), 0.1) 0%,
+        transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.feature-item:hover::after {
+    opacity: 1;
+}

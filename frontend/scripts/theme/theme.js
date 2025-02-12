@@ -5,21 +5,25 @@ const themeManager = {
         this.setTheme(savedTheme);
         
         const themeSwitch = document.querySelector('.theme-switch');
-        if (themeSwitch) {
-            // Add click handler with ripple effect
-            themeSwitch.addEventListener('click', (e) => {
-                this.createRipple(e);
-                this.toggleTheme();
-            });
-            
-            // Add hover effects
-            themeSwitch.addEventListener('mouseover', () => this.handleHover(true));
-            themeSwitch.addEventListener('mouseout', () => this.handleHover(false));
-            
-            // Set initial state
-            if (savedTheme === 'dark') {
-                themeSwitch.classList.add('dark');
-            }
+        if (!themeSwitch) {
+            // If theme switch is not found, wait and try again
+            setTimeout(() => this.init(), 100);
+            return;
+        }
+        
+        // Add click handler with ripple effect
+        themeSwitch.addEventListener('click', (e) => {
+            this.createRipple(e);
+            this.toggleTheme();
+        });
+        
+        // Add hover effects
+        themeSwitch.addEventListener('mouseover', () => this.handleHover(true));
+        themeSwitch.addEventListener('mouseout', () => this.handleHover(false));
+        
+        // Set initial state
+        if (savedTheme === 'dark') {
+            themeSwitch.classList.add('dark');
         }
         
         // Initialize animations

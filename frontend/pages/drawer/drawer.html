@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawer Component</title>
+</head>
+<body>
+   <!-- Mobile Drawer -->
+<template id="drawer-template">
+<div class="mobile-drawer">
+    <div class="drawer-header">
+        <div class="app-bar-brand">
+            <i class="fas fa-seedling"></i>
+            <span>PlantHub</span>
+        </div>
+        <button class="drawer-close">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <div class="drawer-content">
+        <nav class="drawer-nav">
+            <a href="#" class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-leaf"></i>
+                <span>My Plants</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-calendar"></i>
+                <span>Schedule</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Community</span>
+            </a>
+        </nav>
+    </div>
+    <div class="drawer-profile">
+        <div class="user-avatar">O</div>
+        <div class="user-info">
+            <div class="user-name">Omar</div>
+            <small class="user-email">omar@example.com</small>
+        </div>
+        <i class="fas fa-chevron-up toggle-icon"></i>
+        <div class="drawer-profile-menu">
+            <a href="#" class="menu-item">
+                <i class="fas fa-user"></i>
+                <span>My Profile</span>
+            </a>
+            <a href="#" class="menu-item">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+            <div class="menu-divider"></div>
+            <a href="signin.html" class="menu-item">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Sign Out</span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="drawer-overlay"></div>
+</template>
+</body>
+</html>

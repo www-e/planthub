@@ -1,0 +1,18 @@
+/* Authentication Links Styles */
+.alternate-auth {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--secondary-color);
+    animation: slide-up 0.5s ease-out 0.5s backwards;
+}
+
+.alternate-auth a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.alternate-auth a:hover {
+    color: var(--primary-dark);
+}

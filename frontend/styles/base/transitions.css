@@ -1,0 +1,24 @@
+/* Transition Styles */
+/* Add smooth transitions for responsive changes */
+.auth-container,
+.left-panel,
+.right-panel,
+.features-list,
+.form-container {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .feature-item {
+        transition: none;
+    }
+
+    .feature-item:hover {
+        transform: none;
+    }
+
+    .ripple {
+        display: none;
+    }
+}
