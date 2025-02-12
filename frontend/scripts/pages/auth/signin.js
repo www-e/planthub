@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const username = email.split('@')[0]; // Gets 'omar' from 'omar'
             localStorage.setItem('username', username);
             
-            // Redirect to home page
-            window.location.href = '../../../pages/home/home.html';
+            // Redirect to home page using the configuration
+            window.location.href = siteConfig.getPageUrl('frontend/pages/home/home.html');
         } else {
             // Show error message
             const errorDiv = document.createElement('div');
