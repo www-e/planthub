@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plant Hub - Redirecting...</title>
-    <script src="frontend/scripts/config.js"></script>
-    <script>
-        window.onload = function() {
-            window.location.href = siteConfig.getPageUrl('frontend/pages/auth/signin.html');
-        }
+    <script src="config.js" defer></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function() {
+            const signinPath = 'frontend/pages/auth/signin.html';
+            window.location.href = window.siteConfig.getPageUrl(signinPath);
+        });
     </script>
 </head>
 <body>
