@@ -13,49 +13,69 @@
 - **🔐 Secure User Data**: Implemented with strong authentication and data security measures.
 - **📱 PWA Support**: Fully responsive, installable as a Progressive Web App (PWA) for mobile users.
 
-## 🚀 Tech Stack
-- **Frontend**: React.js, Tailwind CSS
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB
-- **AI Model**: TensorFlow.js, OpenCV
-- **Authentication**: JWT-based user authentication
-- **Hosting**: Vercel / Firebase (for frontend), AWS / DigitalOcean (for backend)
+## 🚀 Current Tech Stack
+- **Frontend**: HTML5, CSS3, JavaScript
+- **Styling**: Custom CSS with theme support
+- **Authentication**: Custom implementation
+- **Hosting**: GitHub Pages
+- **Version Control**: Git
 
-## 📥 Installation
-```bash
-# Clone the repository
-git clone https://github.com/www-e/planthub.git
+## 📥 Quick Start Guide
 
-# Navigate to the project directory
-cd planthub
+### Local Development
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/www-e/planthub.git
+   cd planthub
+   ```
 
-# Install dependencies
-npm install
+2. Set up VS Code with Live Server:
+   - Install Live Server extension
+   - Right-click on index.html
+   - Select "Open with Live Server"
 
-# Run the development server
-npm start
+### GitHub Pages
+The project is live at: https://www-e.github.io/planthub/
+
+## 🤝 Contributing
+We welcome contributions! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on:
+- Branch management
+- Development workflow
+- Code review process
+- Backup procedures
+- Deployment process
+
+## 📁 Project Structure
+```
+planthub/
+├── frontend/
+│   ├── pages/         # HTML pages
+│   │   ├── auth/      # Authentication pages
+│   │   ├── home/      # Home page
+│   │   └── books/     # Books and guides
+│   ├── scripts/       # JavaScript files
+│   │   ├── components/# Reusable components
+│   │   ├── pages/     # Page-specific scripts
+│   │   └── theme/     # Theme management
+│   └── styles/        # CSS files
+│       ├── base/      # Base styles
+│       ├── components/# Component styles
+│       └── theme/     # Theme styles
+├── config.js          # Configuration file
+└── index.html         # Entry point
 ```
 
-## 📤 Deployment
-```bash
-# Build for production
-npm run build
-```
+## 🔄 Development Workflow
+1. Create a new branch for your feature
+2. Make your changes
+3. Test locally using Live Server
+4. Create a pull request
+5. Wait for review and merge
 
-## 📡 Running the Backend
-```bash
-# Navigate to the backend directory
-cd backend
-
-# Install backend dependencies
-npm install
-
-# Start the backend server
-npm run dev
-```
-
-## 📢 Contributing
-Feel free to contribute! Fork the repository, create a new branch, and submit a pull request.
+## 📢 Need Help?
+- Check our [CONTRIBUTING.md](CONTRIBUTING.md) guide
+- Create an issue on GitHub
+- Contact the team lead
 
 ## ⚖️ License
 This project is licensed under the **MIT License**.
