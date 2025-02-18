@@ -193,5 +193,4 @@ The site is automatically deployed to GitHub Pages when changes are pushed to th
 
 ## Need Help?
 - Create an issue on GitHub
-- Contact the team lead
 - Check the documentation

@@ -1,62 +1,227 @@
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
-    .features-section {
-        margin: 15px;
+    .page-container {
+        padding: 15px;
+        min-height: calc(100vh - 30px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
     }
-    
-    .features-content {
-        display: none;
-    }
-    
-    .features-section.expanded .features-content {
-        display: block;
-    }
-    
-    .features-toggle i {
-        transition: transform 0.3s ease;
-    }
-    
-    .features-section.expanded .features-toggle i {
-        transform: rotate(180deg);
-    }
-}
 
-@media (max-width: 968px) {
     .auth-container {
+        width: 100%;
+        max-width: 500px;
+        margin: 0;
+        border-radius: 15px;
         flex-direction: column;
-        max-height: none;
-        margin: 20px;
+        min-height: auto;
+        box-sizing: border-box;
     }
 
     .left-panel {
-        padding: 30px 20px;
+        width: 100%;
+        padding: 25px 20px;
         min-height: auto;
+        order: -1;
+        box-sizing: border-box;
+        margin: 0;
     }
 
-    .features-list {
-        display: block;
-        margin: 20px auto;
+    .right-panel {
+        width: 100%;
+        padding: 25px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        margin: 0;
     }
 
-    .features-list h3 {
-        font-size: 1.3rem;
+    .form-container {
+        width: 100%;
+        max-width: 320px;
+        padding: 0;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .auth-form {
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .input-group {
+        width: 100%;
         margin-bottom: 15px;
+        box-sizing: border-box;
     }
 
-    .features-list ul {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+    .input-group input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px 40px;
+        font-size: 0.95rem;
+    }
+
+    .form-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .form-container .subtitle {
+        font-size: 1rem;
+    }
+
+    .form-options {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .submit-btn {
+        margin: 20px 0;
+    }
+
+    /* Features Section Mobile Overrides */
+    .features-section {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .features-content {
+        display: flex !important;
+        /* Override any display:none from other styles */
+    }
+
+    .features-section:not(.expanded) .features-content {
+        max-height: 0 !important;
+        padding: 0 !important;
+        opacity: 0 !important;
+    }
+
+    .features-section.expanded .features-content {
+        max-height: 1000px !important;
+        opacity: 1 !important;
+    }
+
+    .features-header {
+        padding: 15px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    .features-content {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .feature-item {
+        padding: 12px 15px;
+        margin: 0;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .feature-text {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .branding {
+        width: 100%;
+        text-align: center;
+        margin: 0 0 20px 0;
+        box-sizing: border-box;
+    }
+
+    .branding h2 {
+        font-size: 1.8rem;
+    }
+
+    .branding p {
+        font-size: 1rem;
+    }
+
+    /* My Plants Page Styles */
+    .my-plants-container {
+        padding: 15px;
+        margin: 74px 10px 20px;
+        width: calc(100% - 20px);
+    }
+
+    .plants-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .plants-title {
+        font-size: 1.8rem;
+    }
+
+    .add-plant-btn {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    .plants-grid {
+        gap: 20px;
+        padding: 5px;
+        grid-template-columns: 1fr;
+    }
+
+    .plant-card {
+        max-width: 400px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .plant-image-container {
+        height: 0;
+        padding-top: 75%;
+    }
+
+    .plant-details {
+        grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
 
-    .features-list li {
-        margin-bottom: 0;
-        padding: 10px;
+    .detail-item {
+        padding: 8px;
         font-size: 0.9rem;
     }
 
-    .features-list li i {
-        font-size: 1rem;
+    .plant-actions {
+        padding-top: 12px;
+        gap: 5px;
+    }
+
+    .action-btn {
+        padding: 8px;
+    }
+
+    .upload-modal .upload-options {
+        width: calc(100% - 30px);
+        max-width: 350px;
+        padding: 20px;
+        margin: 15px;
+    }
+
+    .success-message {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        text-align: center;
+        justify-content: center;
     }
 }
 
@@ -67,50 +232,122 @@
     }
 
     .auth-container {
-        margin: 10px;
+        margin: 0;
         border-radius: 15px;
+        width: 100%;
     }
 
-    .features-list ul {
-        grid-template-columns: 1fr;
+    .left-panel, 
+    .right-panel {
+        padding: 20px 15px;
+        width: 100%;
+        margin: 0;
     }
 
-    .features-list li {
-        padding: 8px 12px;
-        font-size: 0.85rem;
+    .form-container {
+        max-width: 280px;
+        width: 100%;
+        margin: 0 auto;
     }
 
-    .input-group {
-        margin-bottom: 15px;
+    .form-container h2 {
+        font-size: 1.6rem;
+    }
+
+    .form-container .subtitle {
+        font-size: 0.95rem;
     }
 
     .input-group input {
-        padding: 12px 40px;
+        padding: 10px 35px;
         font-size: 0.9rem;
     }
 
     .form-options {
         flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
+        align-items: center;
+        gap: 12px;
     }
 
     .submit-btn {
-        padding: 12px;
+        margin: 15px 0;
+        padding: 10px;
         font-size: 0.95rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    .subtitle {
-        font-size: 0.9rem;
     }
 
     .alternate-auth {
         font-size: 0.9rem;
-        margin-top: 15px;
+    }
+
+    .features-section {
+        margin: 15px 0;
+        width: 100%;
+    }
+
+    .features-header,
+    .features-content {
+        padding: 10px;
+        width: 100%;
+        margin: 0;
+    }
+
+    .feature-item {
+        padding: 10px;
+        width: 100%;
+        margin: 0;
+    }
+
+    .feature-text h4 {
+        font-size: 0.9rem;
+    }
+
+    .my-plants-container {
+        padding: 10px;
+        margin: 74px 5px 15px;
+    }
+
+    .plant-filter {
+        margin: 5px;
+        padding: 15px;
+    }
+
+    .filter-group {
+        padding: 12px;
+    }
+
+    .filter-option {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .filter-actions button {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    .plant-card {
+        border-radius: 15px;
+    }
+
+    .plant-info {
+        padding: 15px;
+    }
+
+    .plant-name {
+        font-size: 1.2rem;
+    }
+
+    .detail-item {
+        padding: 6px;
+        font-size: 0.85rem;
+    }
+
+    .action-btn {
+        padding: 6px;
+    }
+
+    .action-btn i {
+        font-size: 1.1rem;
     }
 }
 

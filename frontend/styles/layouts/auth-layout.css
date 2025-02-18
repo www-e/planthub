@@ -6,18 +6,19 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 .auth-container {
     width: 100%;
     max-width: 1200px;
     min-height: 600px;
-    background: var(--white);
+    background: var(--panel-bg);
     border-radius: 20px;
     box-shadow: 0 15px 30px var(--shadow-color);
     display: flex;
     overflow: hidden;
-    animation: container-appear 0.5s ease-out;
+    position: relative;
 }
 
 .left-panel {
@@ -41,7 +42,115 @@
 
 .form-container {
     width: 100%;
-    max-width: 400px;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container h2 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.form-container .subtitle {
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.auth-form {
+    width: 100%;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 40px;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    background: var(--input-bg);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-group i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+}
+
+.input-group .toggle-password {
+    left: auto;
+    right: 12px;
+    cursor: pointer;
+}
+
+.form-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-color);
+}
+
+.forgot-password {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: var(--primary-dark);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: var(--primary-dark);
+}
+
+.alternate-auth {
+    margin-top: 20px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.alternate-auth a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.alternate-auth a:hover {
+    color: var(--primary-dark);
 }
 
 .brand {
@@ -50,6 +159,7 @@
     gap: 10px;
     color: var(--white);
     margin-bottom: 40px;
+    box-sizing: border-box;
 }
 
 .brand i {
@@ -67,4 +177,45 @@
     height: 150%;
     opacity: 0.1;
     animation: float 20s infinite linear;
+    box-sizing: border-box;
+}
+
+/* Ensure all direct children of flex containers have proper box-sizing */
+.page-container > *,
+.auth-container > *,
+.left-panel > *,
+.right-panel > *,
+.form-container > *,
+.auth-form > *,
+.brand > * {
+    box-sizing: border-box;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .auth-container {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .left-panel,
+    .right-panel {
+        flex: none;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .left-panel {
+        padding-bottom: 30px;
+    }
+
+    .form-container {
+        padding: 0;
+    }
+
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
 }
