@@ -1,0 +1,181 @@
+
+.agenda-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.agenda-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 84px; /* Account for app bar + spacing */
+    background: var(--background-light);
+}
+
+.agenda-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.agenda-header p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.agenda-content {
+    display: grid;
+    gap: 2rem;
+}
+
+.plant-upload-section {
+    background: var(--surface-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.upload-box {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-box:hover {
+    border-color: var(--primary-color);
+    background: var(--surface-hover);
+}
+
+.upload-placeholder {
+    text-align: center;
+}
+
+.upload-placeholder i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.upload-btn {
+    padding: 0.8rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.upload-btn:hover {
+    background: var(--primary-dark);
+}
+
+.plant-info-section {
+    background: var(--surface-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.info-item label {
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.info-item input,
+.info-item select {
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--background-light);
+    color: var(--text-primary);
+}
+
+.care-schedule-section {
+    background: var(--surface-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.schedule-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.schedule-card {
+    background: var(--background-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-xs);
+}
+
+.schedule-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.schedule-details p {
+    margin: 0.5rem 0;
+    color: var(--text-secondary);
+}
+
+.care-tips-section {
+    background: var(--surface-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.tips-container {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.tip-item {
+    background: var(--background-color);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: var(--shadow-xs);
+}
+
+.tip-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.tip-item p {
+    color: var(--text-secondary);
+    margin: 0;
+} 

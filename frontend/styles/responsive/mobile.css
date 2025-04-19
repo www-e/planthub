@@ -223,6 +223,55 @@
         text-align: center;
         justify-content: center;
     }
+
+    /* Mobile Styles for Agenda Page */
+    .agenda-container {
+        padding: 1rem;
+    }
+
+    .agenda-header h1 {
+        font-size: 2rem;
+    }
+
+    .agenda-header p {
+        font-size: 1rem;
+    }
+
+    .upload-box {
+        height: 200px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .schedule-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .plant-upload-section,
+    .plant-info-section,
+    .care-schedule-section,
+    .care-tips-section {
+        padding: 1.5rem;
+    }
+
+    .upload-btn {
+        width: 100%;
+    }
+
+    .info-item input,
+    .info-item select {
+        width: 100%;
+    }
+
+    .schedule-card {
+        padding: 1rem;
+    }
+
+    .tip-item {
+        padding: 0.8rem;
+    }
 }
 
 /* Small Mobile Devices */
@@ -348,6 +397,23 @@
 
     .action-btn i {
         font-size: 1.1rem;
+    }
+
+    /* Additional mobile optimizations */
+    .agenda-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .upload-box {
+        height: 150px;
+    }
+
+    .upload-placeholder i {
+        font-size: 2rem;
+    }
+
+    .upload-placeholder p {
+        font-size: 0.9rem;
     }
 }
 
