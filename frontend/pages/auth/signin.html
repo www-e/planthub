@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../../styles/animations/keyframes.css">
     <link rel="stylesheet" href="../../styles/components/app-bar.css">
     <link rel="stylesheet" href="../../styles/components/theme-switcher.css">
+    <link rel="stylesheet" href="../../styles/components/language-switcher.css">
     <link rel="stylesheet" href="../../styles/responsive/mobile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -28,6 +29,10 @@
                 <i class="fas fa-moon moon-icon"></i>
             </div>
         </div>
+    </div>
+
+    <div class="language-switch-wrapper">
+        <button class="language-switch" aria-label="Toggle language">En</button>
     </div>
     
     <div class="animated-background">
@@ -53,8 +58,8 @@
                 </div>
                 <div class="features-section">
                     <div class="features-header">
-                        <h3>Features</h3>
-                        <button class="features-toggle">
+                        <h3 data-translate="features">Features</h3>
+                        <button class="features-toggle" aria-label="Toggle features">
                             <i class="fas fa-chevron-down"></i>
                         </button>
                     </div>
@@ -62,58 +67,59 @@
                         <div class="feature-item">
                             <i class="fas fa-shield-alt"></i>
                             <div class="feature-text">
-                                <h4>Secure Authentication</h4>
+                                <h4 data-translate="secureAuth">Secure Authentication</h4>
                             </div>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-sync"></i>
                             <div class="feature-text">
-                                <h4>Easy Recovery</h4>
+                                <h4 data-translate="easyRecovery">Easy Recovery</h4>
                             </div>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-user-shield"></i>
                             <div class="feature-text">
-                                <h4>Privacy First</h4>
+                                <h4 data-translate="privacyFirst">Privacy First</h4>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="plant-illustration"></div>
             </div>
             <div class="right-panel">
                 <div class="form-container">
-                    <h2>Welcome Back!</h2>
-                    <p class="subtitle">Sign in to your PlantHub account</p>
+                    <h2 data-translate="welcome">Welcome Back!</h2>
+                    <p class="subtitle" data-translate="subtitle">Sign in to your PlantHub account</p>
                     <form class="auth-form">
                         <div class="input-group">
                             <i class="fas fa-envelope"></i>
-                            <input type="email" placeholder="Email" required autocomplete="username">
+                            <input type="email" data-translate="email" placeholder="Email" required autocomplete="username">
                         </div>
                         <div class="input-group">
                             <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Password" required autocomplete="current-password">
+                            <input type="password" data-translate="password" placeholder="Password" required autocomplete="current-password">
                             <i class="fas fa-eye toggle-password"></i>
                         </div>
                         <div class="form-options">
                             <label class="remember-me">
                                 <input type="checkbox">
-                                <span>Remember me</span>
+                                <span data-translate="remember">Remember me</span>
                             </label>
-                            <a href="forgot-password.html" class="forgot-link">Forgot Password?</a>
+                            <a href="forgot-password.html" class="forgot-link" data-translate="forgot">Forgot Password?</a>
                         </div>
-                        <button type="submit" class="submit-btn">Sign In</button>
+                        <button type="submit" class="submit-btn" data-translate="signin">Sign In</button>
                     </form>
                     <div class="alternate-auth">
-                        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+                        <p><span data-translate="noAccount">Don't have an account?</span> <a href="signup.html" data-translate="signup">Sign Up</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script src="../../../config.js"></script>
+    <script src="../../scripts/language/translations.js"></script>
     <script src="../../scripts/navigation.js"></script>
     <script src="../../scripts/theme/theme.js"></script>
+    <script src="../../scripts/language/language.js"></script>
     <script src="../../scripts/components/features-toggle.js"></script>
     <script src="../../scripts/pages/auth/auth.js"></script>
     <script src="../../scripts/pages/auth/features.js"></script>
