@@ -2,7 +2,7 @@
 .language-switch-wrapper {
     position: fixed;
     top: 20px;
-    right: 20px;
+    left: 20px;
     z-index: 1000;
 }
 
@@ -59,7 +59,7 @@
 @media (max-width: 768px) {
     .language-switch-wrapper {
         top: 10px;
-        right: 10px;
+        left: 10px;
     }
     
     .language-switch {
@@ -71,8 +71,8 @@
 
 /* RTL Support */
 [dir="rtl"] .language-switch-wrapper {
-    right: auto;
-    left: 20px;
+    left: auto;
+    right: 20px;
 }
 
 [dir="rtl"] .language-switch {
@@ -89,3 +89,58 @@
         display: none;
     }
 } 
+
+/* User Profile Dropdown Language Switch */
+.dropdown-language-switch {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.dropdown-language-switch:hover {
+    background-color: var(--hover-color);
+}
+
+.dropdown-language-switch i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+[dir="rtl"] .dropdown-language-switch i {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+/* Drawer Language Switch */
+.drawer-language-switch {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.drawer-language-switch i {
+    margin-right: 10px;
+    font-size: 16px;
+    color: var(--primary-color);
+}
+
+.drawer-language-switch span {
+    font-size: 14px;
+}
+
+[dir="rtl"] .drawer-language-switch i {
+    margin-right: 0;
+    margin-left: 10px;
+}

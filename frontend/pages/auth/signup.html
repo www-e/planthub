@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../../styles/animations/keyframes.css">
     <link rel="stylesheet" href="../../styles/components/app-bar.css">
     <link rel="stylesheet" href="../../styles/components/theme-switcher.css">
+    <link rel="stylesheet" href="../../styles/components/language-switcher.css">
     <link rel="stylesheet" href="../../styles/responsive/mobile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -28,6 +29,10 @@
                 <i class="fas fa-moon moon-icon"></i>
             </div>
         </div>
+    </div>
+
+    <div class="language-switch-wrapper">
+        <button class="language-switch" aria-label="Toggle language">En</button>
     </div>
     
     <div class="animated-background">
@@ -116,7 +121,12 @@
             </div>
         </div>
     </div>
+    <script src="../../../config.js"></script>
+    <script src="../../scripts/language/translations.js"></script>
+    <script src="../../scripts/navigation.js"></script>
     <script src="../../scripts/theme/theme.js"></script>
+    <script src="../../scripts/language/language.js"></script>
+    <script src="../../scripts/components/features-toggle.js"></script>
     <script src="../../scripts/pages/auth/auth.js"></script>
     <script src="../../scripts/pages/auth/features.js"></script>
     <script src="../../scripts/pages/auth/signin.js"></script>

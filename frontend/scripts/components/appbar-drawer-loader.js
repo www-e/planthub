@@ -9,6 +9,20 @@ async function loadComponent(componentPath, placeholderId) {
       document.getElementById(placeholderId).appendChild(
         template.content.cloneNode(true)
       );
+      
+      // After component is loaded, initialize language functionality
+      if (window.languageManager) {
+        // Initialize language buttons
+        if (placeholderId === 'app-bar-placeholder') {
+          window.languageManager.initDropdownLanguageSwitch();
+        } else if (placeholderId === 'drawer-placeholder') {
+          window.languageManager.initDrawerLanguageSwitch();
+        }
+        
+        // Apply translations to the newly loaded component
+        const currentLang = localStorage.getItem('language') || 'en';
+        window.languageManager.updateComponentTranslations(currentLang, placeholderId);
+      }
     }
   } catch (error) {
     console.error(`Error loading ${componentPath}:`, error);
