@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlantHub - Community</title>
+    <link rel="stylesheet" href="../../styles/theme/themes.css">
+    <link rel="stylesheet" href="../../styles/base/reset.css">
+    <link rel="stylesheet" href="../../styles/base/transitions.css">
+    <link rel="stylesheet" href="../../styles/components/buttons.css">
+    <link rel="stylesheet" href="../../styles/animations/keyframes.css">
+    <link rel="stylesheet" href="../../styles/components/app-bar.css">
+    <link rel="stylesheet" href="../../styles/components/theme-switcher.css">
+    <link rel="stylesheet" href="../../styles/pages/community.css">
+    <link rel="stylesheet" href="../../styles/responsive/mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app-bar-placeholder"></div>
+    <div id="drawer-placeholder"></div>
+    <div class="drawer-overlay"></div>
+
+    <main class="community-container">
+        <div class="community-header">
+            <h1 class="community-title">Plant Community</h1>
+            <button class="new-post-btn">
+                <i class="fas fa-plus"></i>
+                Create Post
+            </button>
+        </div>
+
+        <div class="community-content">
+            <div class="filters-section">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search posts...">
+                </div>
+                <div class="tags-filter">
+                    <button class="tag-btn active" data-tag="all">All</button>
+                    <button class="tag-btn" data-tag="question">Questions</button>
+                    <button class="tag-btn" data-tag="showcase">Plant Showcase</button>
+                    <button class="tag-btn" data-tag="tips">Tips & Tricks</button>
+                    <button class="tag-btn" data-tag="help">Help Needed</button>
+                </div>
+            </div>
+
+            <div class="posts-grid">
+                <!-- Posts will be dynamically added here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- New Post Modal -->
+    <div class="new-post-modal">
+        <div class="modal-content">
+            <button class="close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2>Create New Post</h2>
+            <form id="new-post-form">
+                <div class="form-group">
+                    <label for="post-title">Title</label>
+                    <input type="text" id="post-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="post-content">Content</label>
+                    <textarea id="post-content" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="post-tag">Category</label>
+                    <select id="post-tag" required>
+                        <option value="question">Question</option>
+                        <option value="showcase">Plant Showcase</option>
+                        <option value="tips">Tips & Tricks</option>
+                        <option value="help">Help Needed</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="post-image">Add Image (optional)</label>
+                    <input type="file" id="post-image" accept="image/*">
+                </div>
+                <button type="submit" class="submit-post-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    Post
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../../config.js"></script>
+    <script src="../../scripts/components/appbar-drawer-loader.js"></script>
+    <script src="../../scripts/components/drawer.js"></script>
+    <script src="../../scripts/navigation.js"></script>
+    <script src="../../scripts/theme/theme.js"></script>
+    <script src="../../scripts/pages/community/community.js"></script>
+</body>
+</html> 

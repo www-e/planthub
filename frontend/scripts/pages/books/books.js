@@ -1,124 +1,88 @@
-// Sample books data - Replace with actual API call in production
+// Books data with enhanced information and real images
 const booksData = [
     {
         id: 1,
         title: "The Complete Guide to Indoor Plants",
         author: "Sarah Green",
-        cover: "../../assets/images/books/indoor-plants.jpg",
+        cover: "/assets/images/books/1.webp",
         tags: ["indoor", "beginner"],
         format: "pdf",
         downloadUrl: "#",
-        description: "Master the art of indoor plant care with this comprehensive guide."
+        description: "Master the art of indoor plant care with this comprehensive guide. Learn about light requirements, watering schedules, soil types, and troubleshooting common issues.",
+        isbn: "978-1234567890",
+        publishedYear: 2023,
+        pages: 256,
+        preview: "https://example.com/preview/indoor-plants"
     },
     {
         id: 2,
         title: "Sustainable Garden Design",
         author: "Michael Brown",
-        cover: "../../assets/images/books/sustainable-garden.jpg",
+        cover: "/assets/images/books/2.webp",
         tags: ["sustainable", "design"],
         format: "ebook",
         downloadUrl: "#",
-        description: "Learn how to create environmentally friendly and beautiful gardens."
+        description: "Create environmentally friendly gardens that thrive with minimal resources. Includes practical tips for water conservation, native plant selection, and organic pest control.",
+        isbn: "978-0987654321",
+        publishedYear: 2023,
+        pages: 320,
+        preview: "https://example.com/preview/sustainable-garden"
     },
     {
         id: 3,
         title: "Medicinal Plants Encyclopedia",
         author: "Dr. Emily Chen",
-        cover: "../../assets/images/books/medicinal.jpg",
+        cover: "/assets/images/books/3.webp",
         tags: ["medicinal", "reference"],
         format: "pdf",
         downloadUrl: "#",
-        description: "A comprehensive guide to medicinal plants and their properties."
+        description: "An extensive guide to medicinal plants, their properties, and traditional uses. Features detailed botanical illustrations and scientific research.",
+        isbn: "978-5678901234",
+        publishedYear: 2022,
+        pages: 450,
+        preview: "https://example.com/preview/medicinal-plants"
     },
     {
         id: 4,
         title: "Urban Farming Basics",
         author: "James Wilson",
-        cover: "../../assets/images/books/urban-farming.jpg",
+        cover: "/assets/images/books/4.webp",
         tags: ["urban", "beginner"],
         format: "ebook",
         downloadUrl: "#",
-        description: "Start your own urban farm with this practical guide."
+        description: "Transform any urban space into a productive garden. Covers container gardening, vertical growing systems, and small-space solutions.",
+        isbn: "978-4321098765",
+        publishedYear: 2023,
+        pages: 280,
+        preview: "https://example.com/preview/urban-farming"
     },
     {
         id: 5,
         title: "Desert Plants Care Guide",
         author: "Maria Rodriguez",
-        cover: "../../assets/images/books/desert-plants.jpg",
+        cover: "/assets/images/books/5.webp",
         tags: ["desert", "care"],
         format: "article",
         downloadUrl: "#",
-        description: "Expert tips for growing and maintaining desert plants."
+        description: "Expert guidance for growing and maintaining desert plants. Includes tips for succulent care, xeriscaping, and drought-resistant landscaping.",
+        isbn: "978-8765432109",
+        publishedYear: 2023,
+        pages: 180,
+        preview: "https://example.com/preview/desert-plants"
     },
     {
         id: 6,
         title: "Hydroponics for Beginners",
         author: "David Park",
-        cover: "../../assets/images/books/hydroponics.jpg",
+        cover: "/assets/images/books/6.webp",
         tags: ["hydroponics", "beginner"],
         format: "pdf",
         downloadUrl: "#",
-        description: "Start your hydroponic garden with this step-by-step guide."
-    },
-    {
-        id: 7,
-        title: "Plant Photography Guide",
-        author: "Lisa Chen",
-        cover: "../../assets/images/books/photography.jpg",
-        tags: ["photography", "art"],
-        format: "ebook",
-        downloadUrl: "#",
-        description: "Capture stunning plant photos with professional techniques."
-    },
-    {
-        id: 8,
-        title: "Rare Plants Collection",
-        author: "Dr. Robert Smith",
-        cover: "../../assets/images/books/rare-plants.jpg",
-        tags: ["rare", "collection"],
-        format: "pdf",
-        downloadUrl: "#",
-        description: "Discover the world's most unique and rare plant species."
-    },
-    {
-        id: 9,
-        title: "Vertical Gardening Solutions",
-        author: "Anna White",
-        cover: "../../assets/images/books/vertical.jpg",
-        tags: ["vertical", "space-saving"],
-        format: "article",
-        downloadUrl: "#",
-        description: "Maximize your space with vertical gardening techniques."
-    },
-    {
-        id: 10,
-        title: "Plant Disease Prevention",
-        author: "Dr. Mark Johnson",
-        cover: "../../assets/images/books/disease.jpg",
-        tags: ["health", "care"],
-        format: "pdf",
-        downloadUrl: "#",
-        description: "Identify and prevent common plant diseases."
-    },
-    {
-        id: 11,
-        title: "Bonsai Mastery",
-        author: "Kenji Tanaka",
-        cover: "../../assets/images/books/bonsai.jpg",
-        tags: ["bonsai", "art"],
-        format: "ebook",
-        downloadUrl: "#",
-        description: "Master the ancient art of bonsai cultivation."
-    },
-    {
-        id: 12,
-        title: "Organic Fertilizers Guide",
-        author: "Emma Davis",
-        cover: "../../assets/images/books/fertilizers.jpg",
-        tags: ["organic", "sustainable"],
-        format: "article",
-        downloadUrl: "#",
-        description: "Create and use natural fertilizers for healthier plants."
+        description: "A comprehensive introduction to hydroponic growing systems. Learn about nutrient solutions, pH management, and system maintenance.",
+        isbn: "978-2109876543",
+        publishedYear: 2023,
+        pages: 220,
+        preview: "https://example.com/preview/hydroponics"
     }
 ];
 
@@ -132,19 +96,30 @@ const formatFilter = document.getElementById('format-filter');
 function createBookCard(book) {
     return `
         <div class="book-card" data-id="${book.id}">
-            <img src="${book.cover}" alt="${book.title}" class="book-cover lazy" loading="lazy">
-            <div class="book-info">
-                <h3 class="book-title">${book.title}</h3>
-                <p class="book-author">By ${book.author}</p>
-                <p class="book-description">${book.description}</p>
-                <div class="book-tags">
-                    ${book.tags.map(tag => `<span class="book-tag">${tag}</span>`).join('')}
-                </div>
+            <div class="book-cover-container">
+                <img src="${book.cover}" alt="${book.title}" class="book-cover lazy" loading="lazy" onerror="this.onerror=null; this.style.backgroundColor='#f0f0f0'; this.style.display='flex'; this.style.alignItems='center'; this.style.justifyContent='center'; this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'100\\' height=\\'100\\'><text x=\\'50%\\' y=\\'50%\\' text-anchor=\\'middle\\' dy=\\'.3em\\' fill=\\'%23999\\' font-size=\\'14\\'>${book.title}</text></svg>';">
                 <div class="book-actions">
+                    <button class="preview-btn" data-preview="${book.preview}">
+                        <i class="fas fa-eye"></i>
+                        Preview
+                    </button>
                     <button class="download-btn" data-id="${book.id}">
                         <i class="fas fa-download"></i>
                         Download ${book.format.toUpperCase()}
                     </button>
+                </div>
+            </div>
+            <div class="book-info">
+                <h3 class="book-title">${book.title}</h3>
+                <p class="book-author">By ${book.author}</p>
+                <p class="book-metadata">
+                    <span class="book-year">${book.publishedYear}</span> •
+                    <span class="book-pages">${book.pages} pages</span> •
+                    <span class="book-isbn">ISBN: ${book.isbn}</span>
+                </p>
+                <p class="book-description">${book.description}</p>
+                <div class="book-tags">
+                    ${book.tags.map(tag => `<span class="book-tag">${tag}</span>`).join('')}
                 </div>
             </div>
         </div>
@@ -163,6 +138,18 @@ function renderBooks(books) {
     
     booksGrid.innerHTML = '';
     booksGrid.appendChild(fragment);
+
+    // Initialize lazy loading for the newly added images
+    const lazyImages = booksGrid.querySelectorAll('img.lazy');
+    lazyImages.forEach(img => {
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', () => {
+                img.classList.add('loaded');
+            });
+        }
+    });
 }
 
 // Debounce function for search
@@ -225,6 +212,14 @@ booksGrid.addEventListener('click', (e) => {
     }
 });
 
+// Add preview functionality
+document.addEventListener('click', (e) => {
+    if (e.target.closest('.preview-btn')) {
+        const previewUrl = e.target.closest('.preview-btn').dataset.preview;
+        window.open(previewUrl, '_blank');
+    }
+});
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     renderBooks(booksData);
@@ -233,4 +228,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const uniqueTags = [...new Set(booksData.flatMap(book => book.tags))].sort();
     categoryFilter.innerHTML = '<option value="">All Categories</option>' +
         uniqueTags.map(tag => `<option value="${tag}">${tag.charAt(0).toUpperCase() + tag.slice(1)}</option>`).join('');
+
+    // Initialize lazy loading
+    const lazyImages = document.querySelectorAll('img.lazy');
+    lazyImages.forEach(img => {
+        img.addEventListener('load', () => {
+            img.classList.add('loaded');
+        });
+    });
 });
