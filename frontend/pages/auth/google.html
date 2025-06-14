@@ -1,0 +1,48 @@
+<!-- http://127.0.0.1:5500/frontend/pages/auth/google.html?state=xxHlmzM1pgqcaYFRvkoJMlsCCw6hjifukiRb0qCZ&code=4%2F0AUJR-x5dwVausgpJWTSsaW2Lyfm6WThz1fDAfXCp2LCGbbZQp3IGeC3tqLc8nw9-uswHkA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=2&prompt=none -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      window.onload = async function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const state = urlParams.get("state");
+        const code = urlParams.get("code");
+        const scope = urlParams.get("scope");
+        const authuser = urlParams.get("authuser");
+        const prompt = urlParams.get("prompt");
+
+        if (state && code && scope && authuser && prompt) {
+          const redirectUrl =
+            `https://planthub.mhmud.com/api/login/google/call-back?state=${state}` +
+            `&code=${code}&scope=${scope}&authuser=${authuser}&prompt=${prompt}`;
+          const res = await fetch(redirectUrl, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          if (res.ok) {
+            const data = await res.json();
+            if (data.success) {
+              window.location.href =
+                "https://planthub.mhmud.com/frontend/pages/home/home.html";
+              localStorage.setItem("userToken", data.token);
+              localStorage.setItem("userData", JSON.stringify(data.user));
+            } else {
+              console.error("Error:", data.message);
+              alert("Authentication failed. Please try again.");
+            }
+          } else {
+            console.error("Network response was not ok:", res.statusText);
+            alert("Network error. Please try again later.");
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,242 @@
+/* frontend/styles/pages/blogs.css */
+
+/* Blogs Container */
+.blogs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 80px; /* Space for fixed app bar */
+    transition: background-color var(--transition-speed-normal), color var(--transition-speed-normal);
+}
+
+/* Header Section */
+.blogs-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: var(--card-background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-small);
+    transition: background-color var(--transition-speed-normal), color var(--transition-speed-normal);
+}
+
+.blogs-header h1 {
+    font-size: 2.5em;
+    color: var(--text-color-primary);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.blogs-header p {
+    font-size: 1.1em;
+    color: var(--text-color-secondary);
+    line-height: 1.6;
+}
+
+/* Blogs List */
+.blogs-list {
+    display: grid;
+    gap: 30px;
+    padding-bottom: 50px; /* Add some space at the bottom */
+}
+
+/* Individual Blog Post */
+.blog-post {
+    background-color: var(--card-background-color);
+    border-radius: var(--border-radius-large); /* Rounded corners for the entire card */
+    box-shadow: var(--shadow-medium);
+    overflow: hidden; /* Important for image slider */
+    display: flex;
+    flex-direction: column; /* Stack image and content vertically */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color var(--transition-speed-normal);
+    width: 100%; /* Make each blog post full width */
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-large);
+}
+
+/* Blog Image Slider (Carousel) */
+.blog-image-slider {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Fixed height for the slider */
+    overflow: hidden;
+    background-color: var(--border-color); /* Placeholder background */
+}
+
+.slider-images {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area, crop if necessary */
+    flex-shrink: 0; /* Prevent images from shrinking */
+    border-radius: var(--border-radius-large) var(--border-radius-large) 0 0; /* Rounded top corners */
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--background-color-primary);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    border-radius: var(--border-radius);
+    opacity: 0.8;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    z-index: 10;
+}
+
+.slider-btn:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.prev-btn {
+    left: 15px;
+}
+
+.next-btn {
+    right: 15px;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* Blog Content */
+.blog-content {
+    padding: 25px;
+    flex-grow: 1; /* Allow content to take remaining space */
+}
+
+.blog-title {
+    font-size: 1.8em;
+    color: var(--text-color-primary);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.blog-meta {
+    font-size: 0.9em;
+    color: var(--text-color-secondary);
+    margin-bottom: 15px;
+}
+
+.blog-description {
+    font-size: 1em;
+    color: var(--text-color-primary);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.read-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+}
+
+.read-more-btn:hover {
+    background-color: var(--primary-color-dark);
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .blogs-container {
+        padding: 15px;
+        padding-top: 70px;
+    }
+
+    .blogs-header h1 {
+        font-size: 2em;
+    }
+
+    .blogs-header p {
+        font-size: 1em;
+    }
+
+    .blog-image-slider {
+        height: 250px; /* Adjust height for smaller screens */
+    }
+
+    .blog-title {
+        font-size: 1.5em;
+    }
+
+    .blog-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .blogs-container {
+        padding: 10px;
+        padding-top: 60px;
+    }
+
+    .blogs-header h1 {
+        font-size: 1.8em;
+    }
+
+    .blogs-header p {
+        font-size: 0.9em;
+    }
+
+    .blog-image-slider {
+        height: 200px;
+    }
+
+    .slider-btn {
+        padding: 8px 12px;
+        font-size: 1.2em;
+    }
+
+    .blog-title {
+        font-size: 1.3em;
+    }
+
+    .blog-meta, .blog-description {
+        font-size: 0.9em;
+    }
+
+    .read-more-btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}

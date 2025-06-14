@@ -1,144 +1,165 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PlantHub - My Plants</title>
-    <link rel="stylesheet" href="../../styles/theme/themes.css">
-    <link rel="stylesheet" href="../../styles/base/reset.css">
-    <link rel="stylesheet" href="../../styles/base/transitions.css">
-    <link rel="stylesheet" href="../../styles/components/buttons.css">
-    <link rel="stylesheet" href="../../styles/animations/keyframes.css">
-    <link rel="stylesheet" href="../../styles/components/app-bar.css">
-    <link rel="stylesheet" href="../../styles/components/theme-switcher.css">
-    <link rel="stylesheet" href="../../styles/components/language-switcher.css">
-    <link rel="stylesheet" href="../../styles/components/plant-filter.css">
-    <link rel="stylesheet" href="../../styles/pages/my-plants.css">
-    <link rel="stylesheet" href="../../styles/responsive/mobile.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="../../styles/theme/themes.css" />
+    <link rel="stylesheet" href="../../styles/base/reset.css" />
+    <link rel="stylesheet" href="../../styles/base/transitions.css" />
+    <link rel="stylesheet" href="../../styles/components/buttons.css" />
+    <link rel="stylesheet" href="../../styles/animations/keyframes.css" />
+    <link rel="stylesheet" href="../../styles/components/app-bar.css" />
+    <link rel="stylesheet" href="../../styles/components/theme-switcher.css" />
+    <link
+      rel="stylesheet"
+      href="../../styles/components/language-switcher.css"
+    />
+    <link rel="stylesheet" href="../../styles/components/plant-filter.css" />
+    <link rel="stylesheet" href="../../styles/pages/my-plants.css" />
+    <link rel="stylesheet" href="../../styles/responsive/mobile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div id="app-bar-placeholder"></div>
     <div id="drawer-placeholder"></div>
     <div class="drawer-overlay"></div>
 
     <main class="my-plants-container">
-        <div class="plants-header">
-            <h1 class="plants-title">My Plants</h1>
-            <button class="add-plant-btn">
-                <i class="fas fa-plus"></i>
-                Add Plant
+      <div class="plants-header">
+        <h1 class="plants-title">My Plants</h1>
+        <button class="add-plant-btn">
+          <i class="fas fa-plus"></i>
+          Add Plant
+        </button>
+      </div>
+
+      <!-- Plant Filter Section -->
+      <div class="plant-filter">
+        <div class="filter-header">
+          <h2 class="filter-title">
+            <i class="fas fa-filter"></i>
+            Filter Plants
+          </h2>
+          <button class="filter-toggle">
+            <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+        <div class="filter-content">
+          <div class="filter-group">
+            <h3 class="filter-group-title">
+              <i class="fas fa-leaf"></i>
+              Plant Type
+            </h3>
+            <label class="filter-option">
+              <input type="checkbox" data-category="types" value="indoor" />
+              Indoor Plants
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-category="types" value="outdoor" />
+              Outdoor Plants
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-category="types" value="succulent" />
+              Succulents
+            </label>
+          </div>
+
+          <div class="filter-group">
+            <h3 class="filter-group-title">
+              <i class="fas fa-hand-holding-heart"></i>
+              Care Level
+            </h3>
+            <label class="filter-option">
+              <input type="checkbox" data-category="care" value="easy" />
+              Easy Care
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-category="care" value="moderate" />
+              Moderate Care
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-category="care" value="expert" />
+              Expert Care
+            </label>
+          </div>
+
+          <div class="filter-group">
+            <h3 class="filter-group-title">
+              <i class="fas fa-sun"></i>
+              Environment
+            </h3>
+            <label class="filter-option">
+              <input
+                type="checkbox"
+                data-category="environment"
+                value="low-light"
+              />
+              Low Light
+            </label>
+            <label class="filter-option">
+              <input
+                type="checkbox"
+                data-category="environment"
+                value="bright-indirect"
+              />
+              Bright Indirect
+            </label>
+            <label class="filter-option">
+              <input
+                type="checkbox"
+                data-category="environment"
+                value="full-sun"
+              />
+              Full Sun
+            </label>
+          </div>
+
+          <div class="filter-group">
+            <h3 class="filter-group-title">
+              <i class="fas fa-ruler"></i>
+              Size
+            </h3>
+            <label class="filter-option">
+              <input type="checkbox" data-category="size" value="small" />
+              Small
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-category="size" value="medium" />
+              Medium
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-category="size" value="large" />
+              Large
+            </label>
+          </div>
+
+          <div class="filter-actions">
+            <button class="reset-filters">
+              <i class="fas fa-undo"></i>
+              Reset Filters
             </button>
+            <button class="apply-filters">
+              <i class="fas fa-check"></i>
+              Apply Filters
+            </button>
+          </div>
         </div>
+      </div>
 
-        <!-- Plant Filter Section -->
-        <div class="plant-filter">
-            <div class="filter-header">
-                <h2 class="filter-title">
-                    <i class="fas fa-filter"></i>
-                    Filter Plants
-                </h2>
-                <button class="filter-toggle">
-                    <i class="fas fa-chevron-down"></i>
-                </button>
-            </div>
-            <div class="filter-content">
-                <div class="filter-group">
-                    <h3 class="filter-group-title">
-                        <i class="fas fa-leaf"></i>
-                        Plant Type
-                    </h3>
-                    <label class="filter-option">
-                        <input type="checkbox" data-category="types" value="indoor">
-                        Indoor Plants
-                    </label>
-                    <label class="filter-option">
-                        <input type="checkbox" data-category="types" value="outdoor">
-                        Outdoor Plants
-                    </label>
-                    <label class="filter-option">
-                        <input type="checkbox" data-category="types" value="succulent">
-                        Succulents
-                    </label>
-                </div>
-
-                <div class="filter-group">
-                    <h3 class="filter-group-title">
-                        <i class="fas fa-hand-holding-heart"></i>
-                        Care Level
-                    </h3>
-                    <label class="filter-option">
-                        <input type="checkbox" data-category="care" value="easy">
-                        Easy Care
-                    </label>
-                    <label class="filter-option">
-                        <input type="checkbox" data-category="care" value="moderate">
-                        Moderate Care
-                    </label>
-                    <label class="filter-option">
-                        <input type="checkbox" data-category="care" value="expert">
-                        Expert Care
-                    </label>
-                </div>
-
-                <div class="filter-group">
-                    <h3 class="filter-group-title">
-                        <i class="fas fa-sun"></i>
-                        Environment
-                    </h3>
-                    <label class="filter-option">
-                        <input type="checkbox" data-category="environment" value="low-light">
-                        Low Light
-                    </label>
-                    <label class="filter-option">
-                        <input type="checkbox" data-category="environment" value="bright-indirect">
-                        Bright Indirect
-                    </label>
-                    <label class="filter-option">
-                        <input type="checkbox" data-category="environment" value="full-sun">
-                        Full Sun
-                    </label>
-                </div>
-
-                <div class="filter-group">
-                    <h3 class="filter-group-title">
-                        <i class="fas fa-ruler"></i>
-                        Size
-                    </h3>
-                    <label class="filter-option">
-                        <input type="checkbox" data-category="size" value="small">
-                        Small
-                    </label>
-                    <label class="filter-option">
-                        <input type="checkbox" data-category="size" value="medium">
-                        Medium
-                    </label>
-                    <label class="filter-option">
-                        <input type="checkbox" data-category="size" value="large">
-                        Large
-                    </label>
-                </div>
-
-                <div class="filter-actions">
-                    <button class="reset-filters">
-                        <i class="fas fa-undo"></i>
-                        Reset Filters
-                    </button>
-                    <button class="apply-filters">
-                        <i class="fas fa-check"></i>
-                        Apply Filters
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Plants Grid -->
-        <div class="plants-grid">
-            <!-- Plant cards will be added dynamically by plant-manager.js -->
-        </div>
+      <!-- Plants Grid -->
+      <div class="plants-grid">
+        <!-- Plant cards will be added dynamically by plant-manager.js -->
+      </div>
     </main>
-    
+
     <!-- Scripts -->
     <script src="../../../config.js"></script>
     <script src="../../scripts/components/appbar-drawer-loader.js"></script>
@@ -149,5 +170,5 @@
     <script src="../../scripts/theme/theme.js"></script>
     <script src="../../scripts/language/translations.js"></script>
     <script src="../../scripts/language/language.js"></script>
-</body>
+  </body>
 </html>
