@@ -256,6 +256,9 @@ window.languageManager = {
                         element.placeholder = commonTranslations[key];
                     } else {
                         element.textContent = commonTranslations[key];
+                        if (key == 'hello') {
+                            element.innerHTML+='<span class="username">Omar</span>'
+                        }
                     }
                 });
             });
