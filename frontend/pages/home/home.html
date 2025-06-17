@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../../styles/components/app-bar.css">
     <link rel="stylesheet" href="../../styles/components/theme-switcher.css">
     <link rel="stylesheet" href="../../styles/components/language-switcher.css">
+    <link rel="stylesheet" href="../../styles/components/ai-chat.css">
     <link rel="stylesheet" href="../../styles/pages/home.css">
     <link rel="stylesheet" href="../../styles/responsive/mobile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -77,30 +78,11 @@
     <script src="../../../config.js"></script>
     <script src="../../scripts/components/appbar-drawer-loader.js"></script>
     <script src="../../scripts/components/drawer.js"></script>
+    <script src="../../scripts/components/ai-chat.js"></script>
     <script src="../../scripts/navigation.js"></script>
     <script src="../../scripts/theme/theme.js"></script>
     <script src="../../scripts/language/translations.js"></script>
     <script src="../../scripts/language/language.js"></script>
- <!-- <script>
-        // *** الجزء الجديد أو المُعدّل ***
-        document.addEventListener('DOMContentLoaded', () => {
-            const userNameElement = document.getElementById('esm')  ; 
-            
-            // عشان تتأكد إن العنصر موجود
-            console.log("Found username element:", userNameElement); 
-
-            const userData = JSON.parse(localStorage.getItem('userData'));
-            
-            if (userData && userData.name && userNameElement) {
-                userNameElement.innerHTML = userData.name.split(' ')[0]; 
-                console.log("Username set to:", userData.name.split(' ')[0]);
-            } else {
-                console.warn("User data not found in localStorage or username element not found.");
-                if (userNameElement) {
-                    userNameElement.innerText = "Guest"; 
-                }
-            }
-        });
-    </script> -->
+ 
 </body>
 </html>

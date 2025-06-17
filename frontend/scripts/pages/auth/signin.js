@@ -116,6 +116,92 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Handle Google OAuth callback (token in URL)
   handleGoogleOAuthCallback();
+
+  // **********************************************
+  // NEW: Enhanced Guest Access Handler
+  // **********************************************
+  const guestBtn = document.getElementById('continueAsGuest');
+  
+  if (guestBtn) {
+    guestBtn.addEventListener('click', async () => {
+      // Prevent multiple clicks
+      if (guestBtn.disabled) return;
+      
+      // Visual feedback
+      const btnContent = guestBtn.querySelector('.btn-content');
+      const originalHTML = btnContent.innerHTML;
+      
+      btnContent.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Launching...</span>';
+      guestBtn.disabled = true;
+      
+      // Set comprehensive guest data
+      const guestData = {
+        username: 'Guest Explorer',
+        email: 'guest@planthub.com',
+        userType: 'guest',
+        joinDate: new Date().toISOString(),
+        sessionId: 'guest_' + Date.now(),
+        features: {
+          aiChat: true,
+          plantLibrary: true,
+          basicTracking: true,
+          diseaseIdentification: true,
+          wateringReminders: false,
+          advancedAnalytics: false,
+          communityFeatures: false,
+          dataExport: false
+        },
+        limitations: {
+          maxPlants: 3,
+          maxPhotos: 10,
+          sessionDuration: 24 * 60 * 60 * 1000 // 24 hours
+        }
+      };
+      
+      // Store guest session data
+      localStorage.setItem('username', guestData.username);
+      localStorage.setItem('userType', 'guest');
+      localStorage.setItem('guestSession', JSON.stringify(guestData));
+      localStorage.setItem('sessionStartTime', Date.now().toString());
+      localStorage.setItem('userData', JSON.stringify(guestData));
+      localStorage.setItem('userToken', 'guest-token-' + Date.now());
+      
+      // Add some realistic loading time
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      try {
+        // Try to use site config for navigation
+        if (typeof window.siteConfig !== 'undefined') {
+          const homePath = 'frontend/pages/home/home.html';
+          window.location.href = window.siteConfig.getPageUrl(homePath);
+        } else {
+          // Fallback navigation options
+          const possiblePaths = [
+            '../home/home.html',
+            '../../home/home.html',
+            '/frontend/pages/home/home.html',
+            './frontend/pages/home/home.html'
+          ];
+          
+          // Try the most likely path first
+          window.location.href = '../home/home.html';
+        }
+      } catch (error) {
+        console.error('Navigation error:', error);
+        // Ultimate fallback
+        window.location.href = '../home/home.html';
+      }
+    });
+    
+    // Add hover effects
+    guestBtn.addEventListener('mouseenter', () => {
+      guestBtn.style.transform = 'scale(1.02)';
+    });
+    
+    guestBtn.addEventListener('mouseleave', () => {
+      guestBtn.style.transform = 'scale(1)';
+    });
+  }
 });
 
 // **********************************************
@@ -174,7 +260,8 @@ async function handleSignInForm(form) {
   // التعامل مع استجابة الـ API
   if (result.success) {
     submitButton.innerHTML = '<i class="fas fa-check"></i>'; // أيقونة نجاح
-    localStorage.setItem("userdata", JSON.stringify());
+    localStorage.setItem("userdata", JSON.stringify(result.data.user));
+    localStorage.setItem("userType", "registered");
     setTimeout(() => {
       submitButton.textContent = originalText;
       submitButton.disabled = false;
@@ -311,3 +398,53 @@ function handleGoogleOAuthCallback() {
     window.location.href = "/frontend/pages/home/home.html";
   }
 }
+
+// **********************************************
+// 6. Additional Guest Helper Functions
+// **********************************************
+
+// Check if user is guest
+function isGuestUser() {
+  return localStorage.getItem('userType') === 'guest';
+}
+
+// Get guest session data
+function getGuestSession() {
+  const sessionData = localStorage.getItem('guestSession');
+  return sessionData ? JSON.parse(sessionData) : null;
+}
+
+// Check if guest session is expired
+function isGuestSessionExpired() {
+  const startTime = localStorage.getItem('sessionStartTime');
+  if (!startTime) return true;
+  
+  const sessionDuration = 24 * 60 * 60 * 1000; // 24 hours
+  const elapsed = Date.now() - parseInt(startTime);
+  
+  return elapsed > sessionDuration;
+}
+
+// Clear guest session
+function clearGuestSession() {
+  localStorage.removeItem('guestSession');
+  localStorage.removeItem('sessionStartTime');
+  localStorage.removeItem('userType');
+  localStorage.removeItem('username');
+  localStorage.removeItem('userData');
+  localStorage.removeItem('userToken');
+}
+
+// Initialize guest session check on page load
+function initializeGuestSessionCheck() {
+  if (isGuestUser() && isGuestSessionExpired()) {
+    clearGuestSession();
+    // Optionally redirect to signin page or show session expired message
+    console.log('Guest session expired');
+  }
+}
+
+// Call session check on page load
+document.addEventListener('DOMContentLoaded', () => {
+  initializeGuestSessionCheck();
+});

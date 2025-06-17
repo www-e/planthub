@@ -127,6 +127,29 @@
                         </div>
                         <button type="submit" class="submit-btn">Create Account</button>
                     </form>
+                    <!-- Add this after the </form> closing tag and before the alternate-auth div -->
+<div class="guest-access-section">
+    <div class="divider">
+        <span data-translate="or">OR</span>
+    </div>
+    <div class="guest-option">
+        <div class="guest-content">
+            <div class="guest-icon">
+                <i class="fas fa-leaf"></i>
+            </div>
+            <h3 data-translate="guestTitle">Try Before You Sign Up</h3>
+            <p data-translate="guestDescription">Explore PlantHub features as a guest first!</p>
+            <button class="guest-btn" id="continueAsGuest">
+                <span class="btn-content">
+                    <i class="fas fa-play"></i>
+                    <span data-translate="continueAsGuest">Start Exploring</span>
+                </span>
+                <div class="btn-glow"></div>
+            </button>
+        </div>
+    </div>
+</div>
+
                     <div class="alternate-auth">
                         <p>Already have an account? <a href="signin.html">Sign In</a></p>
                     </div>

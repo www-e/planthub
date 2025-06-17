@@ -145,6 +145,29 @@
                 Sign In
               </button>
             </form>
+            <!-- Add this after the </form> closing tag and before the alternate-auth div -->
+<div class="guest-access-section">
+    <div class="divider">
+        <span data-translate="or">OR</span>
+    </div>
+    <div class="guest-option">
+        <div class="guest-content">
+            <div class="guest-icon">
+                <i class="fas fa-seedling"></i>
+            </div>
+            <h3 data-translate="guestTitle">Explore as Guest</h3>
+            <p data-translate="guestDescription">No account needed! Try PlantHub features without signing up.</p>
+            <button class="guest-btn" id="continueAsGuest">
+                <span class="btn-content">
+                    <i class="fas fa-rocket"></i>
+                    <span data-translate="continueAsGuest">Continue as Guest</span>
+                </span>
+                <div class="btn-glow"></div>
+            </button>
+        </div>
+    </div>
+</div>
+
             <div class="alternate-auth">
               <p>
                 <span data-translate="noAccount">Don't have an account?</span>
